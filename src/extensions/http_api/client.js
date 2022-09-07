@@ -259,7 +259,7 @@ class HttpApiClient {
             if (this.cookieJar !== null) {
                 this.cookies.forEach((cookie) => {
                     if (_.isPlainObject(cookie)) {
-                        this.cookieJar.setCookie(new Cookie(cookie), fullUri)
+                        this.cookieJar.setCookie(new Cookie(cookie).toString(), fullUri)
                     } else if (_.isString(cookie)) {
                         this.cookieJar.setCookie(cookie, fullUri)
                     }
